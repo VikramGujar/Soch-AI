@@ -1,0 +1,44 @@
+# Ignore Maven target directory
+target/
+!target/classes/
+!target/maven-status/
+!target/generated-sources/
+
+# Ignore IntelliJ / Eclipse / VS Code project files
+.idea/
+*.iml
+*.log
+.vscode/
+.project
+.classpath
+.settings/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore dependency folder
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Ignore build outputs
+dist/
+build/
+*.war
+*.jar
+
+# Ignore environment variables & sensitive files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Ignore logs
+logs/
+*.log
+*.out
+*.err
