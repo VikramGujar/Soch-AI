@@ -1,44 +1,58 @@
-# Ignore Maven target directory
+# Java / Spring Boot
 target/
-!target/classes/
-!target/maven-status/
-!target/generated-sources/
+*.jar
+*.war
+*.ear
+*.class
+*.log
+*.swp
+*.swo
+hs_err_pid*
+replay_pid*
+dependency-reduced-pom.xml
+.mvn/
+!src/main/resources/static/**/ # Allow frontend static files in backend
+!src/main/resources/templates/**/
 
-# Ignore IntelliJ / Eclipse / VS Code project files
+# IntelliJ IDEA
 .idea/
 *.iml
-*.log
-.vscode/
-.project
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.metadata/
 .classpath
+.project
 .settings/
 
-# Ignore OS-specific files
+# VS Code
+.vscode/
+
+# macOS and system files
 .DS_Store
 Thumbs.db
 
-# Ignore dependency folder
+# Node.js / React
 node_modules/
-npm-debug.log*
-yarn.lock
-pnpm-lock.yaml
-package-lock.json
-
-# Ignore build outputs
+npm-debug.log
+yarn-error.log
 dist/
 build/
-*.war
-*.jar
-
-# Ignore environment variables & sensitive files
 .env
 .env.local
 .env.development
 .env.production
 .env.test
 
-# Ignore logs
+# Logs
 logs/
 *.log
-*.out
-*.err
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git
+.git/
+.gitignore
