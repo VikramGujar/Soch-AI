@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChatInput } from "./Components/ChatInput";
 import { ChatResponse } from "./Components/ChatResponse";
+import { fetchChatResponse } from "./Services/api";
 
 
 
@@ -14,8 +15,10 @@ function App() {
     setLoding(true);
     setResponse(null)
 
-    try {
-      
+    try 
+    {
+      const apiResponse = await fetchChatResponse(question);
+      setResponse(apiResponse);
     } catch (error) 
     {
       alert("Failed to get response");  
