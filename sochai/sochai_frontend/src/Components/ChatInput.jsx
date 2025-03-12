@@ -24,6 +24,7 @@ export function ChatInput({onSubmit})
     return(
         <div className="container container-fluid my-4">
             <form onSubmit={handleSubmit}>
+                <div className="form-group"> 
                 <label>You Just ASK we will Think</label>
                 <input 
                 type="text"
@@ -33,6 +34,7 @@ export function ChatInput({onSubmit})
                 value={question}
                 onChange={handleInputChange}
                 />
+                </div>
 
                 <button type="submit" className="btn btn-primary my-2"> Submit </button>
             </form>
