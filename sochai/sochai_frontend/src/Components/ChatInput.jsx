@@ -1,44 +1,53 @@
 import { useState } from "react";
 
+export function ChatInput({ onSubmit, darkMode, language }) {
+    const [question, setQuestion] = useState("");
 
-
-export function ChatInput({onSubmit})
-{
-    const [question, setQuestion] = useState('');
-
-    function handleSubmit(e)
-    {
+    function handleSubmit(e) {
         e.preventDefault();
-
-        if(question.trim())
-        {
-            onSubmit(question);
+        if (!question.trim()) {
+            alert("⚠️ " + (language === "English" ? "Please enter a question!" : "कृपया एक प्रश्न दर्ज करें!"));
+            return;
         }
+        onSubmit(question.trim());
+        setQuestion("");
     }
 
-    function handleInputChange(e)
-    {
+    function handleInputChange(e) {
         setQuestion(e.target.value);
     }
 
-    return(
-        <div className="container container-fluid my-4">
+    return (
+        <div className={`container my-4 p-3 rounded ${darkMode ? "bg-dark text-white" : "bg-light text-dark"}`}>
             <form onSubmit={handleSubmit}>
-                <div className="form-group"> 
-                <label>You Just ASK we will Think</label>
-                <input 
-                type="text"
-                className="form-control" 
-                id="question"
-                placeholder="Why you are thinking Just ASK!"
-                value={question}
-                onChange={handleInputChange}
-                />
+                <div className="form-group">
+                    <label className="fw-bold">
+                        {language === "English" ? "💡 You Just ASK, We Will Think! 🧠" : "💡 आप पूछें, हम सोचेंगे! 🧠"}
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control mt-2"
+                        placeholder={language === "English" ? "🤔 Why are you thinking? Just ASK!" : "🤔 आप क्यों सोच रहे हैं? बस पूछें!"}
+                        value={question}
+                        onChange={handleInputChange}
+                        onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
+                        style={{ 
+                            background: darkMode ? "#333" : "#fff", 
+                            color: darkMode ? "#fff" : "#000", 
+                            border: "none", 
+                            outline: "none" 
+                        }}
+                        autoFocus
+                    />
                 </div>
-
-                <button type="submit" className="btn btn-primary my-2"> Submit </button>
+                <button 
+                    type="submit" 
+                    className={`btn mt-3 ${darkMode ? "btn-warning" : "btn-dark"}`} 
+                    style={{ fontWeight: "bold" }}
+                >
+                    🚀 {language === "English" ? "Submit" : "जमा करें"}
+                </button>
             </form>
-            
         </div>
     );
 }
