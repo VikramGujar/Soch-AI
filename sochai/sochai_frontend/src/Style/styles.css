@@ -6,3 +6,10 @@
     --vibrant-green : #38ADA9;
     --warm-gold-accents : #F8C291;
   }
+
+
+
+#chat::placeholder {
+  color: #8f8f8f;
+  opacity: 1;
+}

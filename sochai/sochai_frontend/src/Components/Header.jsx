@@ -41,7 +41,19 @@ export function Header() {
     return (
         <header className={`fixed-top w-100 px-4 py-3 d-flex justify-content-between align-items-center shadow-sm ${darkMode ? "bg-black text-white" : "bg-white text-dark"}`}>
             {/* Brand Title */}
-            <div className="fs-4 fw-bold">{language === "English" ? "ThinkAI" : "सोचAI"}</div>
+            <div className="fs-4 fw-bold" style={{ height: '60px', width: '300px', overflow: 'hidden' }}>
+  <img 
+    src="soch.png" 
+    alt="logo" 
+    style={{ 
+      height: '100%', 
+      width: '100%', 
+      objectFit: 'cover', 
+      objectPosition: 'center' 
+    }} 
+  />
+</div>
+
 
             {/* Slogan */}
             <div className="fs-6 text-center flex-grow-1">{language === "English" ? "Your Thinking Friend! 💡🤝" : "आपकी सोच का दोस्त! 💡🤝"}</div>
