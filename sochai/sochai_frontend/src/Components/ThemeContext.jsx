@@ -3,8 +3,8 @@ import { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(true); // Default: Dark Mode
-  const [language, setLanguage] = useState("English"); // Default: English
+  const [darkMode, setDarkMode] = useState(true); 
+  const [language, setLanguage] = useState("English"); 
 
   const toggleTheme = () => {
     setDarkMode((prevMode) => !prevMode);
