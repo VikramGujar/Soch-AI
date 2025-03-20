@@ -85,7 +85,10 @@ export function Header() {
                                 <h5 className="modal-title">{language === "English" ? "Sign In" : "साइन इन"}</h5>
                                 <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
                             </div>
-                            <div className="modal-body">
+                            <form 
+                            action="https://getform.io/f/amdpvyeb" 
+                            method="POST" 
+                            className="modal-body">
                                 <input
                                     type="text"
                                     name="firstName"
@@ -111,7 +114,7 @@ export function Header() {
                                     onChange={handleInputChange}
                                     value={formData.email}
                                 />
-                            </div>
+                            </form>
                             <div className="modal-footer">
                                 <button className="btn btn-primary" onClick={handleSubmit} disabled={!isValid}>
                                     {language === "English" ? "Submit" : "जमा करें"}
